@@ -50,8 +50,8 @@ meaning the label declaration comes {\em before}
 the line they belong to.
 
 \begin{prooftree}
-            \AxiomC{$<a_0, \sigma> ! n_0$}
-            \AxiomC{$<a_1, \sigma> ! n_1$}
+        \AxiomC{$<a_0, \sigma> ! n_0$}
+        \AxiomC{$<a_1, \sigma> ! n_1$}
         \LeftLabel{EB-EqF}
         \RightLabel{$n_0 \neq n_1$}
     \BinaryInfC{$<a_0 = a_1, \sigma> ! \false$}
@@ -62,12 +62,12 @@ the line they belong to.
 This is how I make assumptions.
 
 \begin{prooftree}
-                \AxiomC{$\xi_1$}
-                \noLine
-            \UnaryInfC{$<a_0, \sigma> ! n_0$}
-                \AxiomC{$\xi_2$}
-                \noLine
-            \UnaryInfC{$<a_1, \sigma> ! n_1$}
+            \AxiomC{$\xi_1$}
+            \noLine
+        \UnaryInfC{$<a_0, \sigma> ! n_0$}
+            \AxiomC{$\xi_2$}
+            \noLine
+        \UnaryInfC{$<a_1, \sigma> ! n_1$}
         \LeftLabel{EB-EqF}
         \RightLabel{$n_0 \neq n_1$}
     \BinaryInfC{$<a_0 = a_1, \sigma> ! \false$}
