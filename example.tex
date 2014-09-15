@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,top=1in,bottom=1in,left=1.5in,right=1.5in,landscape]{geometry}
+
+\input{proofpreamble.tex}
+
+\title{Example usage of proofpreamble}
+\author{Thorbjørn S. Kaiser}
+
+\setcounter{secnumdepth}{-1}
+
+\begin{document}
+\maketitle
+
+\section{example 1: flow and indentation}
+
+This example is meant to showcase how the prooftree
+environment is built up.
+
+\begin{prooftree}
+                \AxiomC{1.1.1.1}
+                \AxiomC{1.1.1.2}
+                \AxiomC{1.1.1.3}
+            \TrinaryInfC{1.1.1}
+            \AxiomC{1.1.2}
+        \BinaryInfC{1.1}
+    \UnaryInfC{1}
+\end{prooftree}
+\begin{prooftree}
+            \AxiomC{1.1.1}
+                \AxiomC{1.1.2.1}
+                \AxiomC{1.1.2.2}
+                \AxiomC{1.1.2.3}
+            \TrinaryInfC{1.1.2}
+        \BinaryInfC{1.1}
+    \UnaryInfC{1}
+\end{prooftree}
+
+I highly recommend using this indentation,
+as it makes it easier to read.
+For each fragment, UnaryInfC, BinaryInfC, TrinaryInfC,
+and AxiomC they take a number of fragments above
+themselves, flowing from bottom to top.
+
+\section{example 2: labels}
+
+This example showcases left and right labels.
+As with the previous example evaluation
+flows from bottom to top,
+meaning the label declaration comes {\em before}
+the line they belong to.
+
+\begin{prooftree}
+            \AxiomC{$<a_0, \sigma> ! n_0$}
+            \AxiomC{$<a_1, \sigma> ! n_1$}
+        \LeftLabel{EB-EqF}
+        \RightLabel{$n_0 \neq n_1$}
+    \BinaryInfC{$<a_0 = a_1, \sigma> ! \false$}
+\end{prooftree}
+
+\section{example 3: making assumptions}
+
+This is how I make assumptions.
+
+\begin{prooftree}
+                \AxiomC{$\xi_1$}
+                \noLine
+            \UnaryInfC{$<a_0, \sigma> ! n_0$}
+                \AxiomC{$\xi_2$}
+                \noLine
+            \UnaryInfC{$<a_1, \sigma> ! n_1$}
+        \LeftLabel{EB-EqF}
+        \RightLabel{$n_0 \neq n_1$}
+    \BinaryInfC{$<a_0 = a_1, \sigma> ! \false$}
+\end{prooftree}
+
+Essentially, when you want to make an assumption, $xi_n$,
+you make the ``root'' of the assumption an UnaryInfC
+without a line using \textbackslash{}noLine,
+followed by the assumption name in an \textbackslash{}AxiomC
+fragment.
+
+\end{document}
