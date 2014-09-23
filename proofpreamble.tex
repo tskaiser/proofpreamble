@@ -5,6 +5,8 @@
 \usepackage{bussproofs, varwidth}
 \usepackage{semantic}
 \usepackage{mathabx}
+\usepackage{color}
+\usepackage{xspace}
 
 \newcommand{\gt}{>}
 \mathligprotect{\gt}
@@ -18,5 +20,19 @@
 \mathlig{!}{\downarrow}
 \mathlig{|->}{\mapsto}
 
-\newcommand{\true}{{\bf true}}
-\newcommand{\false}{{\bf false}}
+\newcommand{\true}{{\bf true}\xspace}
+\newcommand{\false}{{\bf false}\xspace}
+\newcommand{\sdash}{\sigma \vdash\xspace}
+
+\newcommand{\IF}{{\bf if}\xspace}
+\newcommand{\THEN}{{\bf then}\xspace}
+\newcommand{\ELSE}{{\bf else}\xspace}
+\newcommand{\WHILE}{{\bf while}\xspace}
+\newcommand{\DO}{{\bf do}\xspace}
+\newcommand{\REPEAT}{{\bf repeat}\xspace}
+\newcommand{\UNTIL}{{\bf until}\xspace}
+\newcommand{\SKIP}{{\bf skip}\xspace}
+
+\newcommand{\hannot}[1]{\color{red} $\{#1\}$}
+
+\EnableBpAbbreviations
